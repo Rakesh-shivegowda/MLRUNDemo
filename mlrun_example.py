@@ -37,7 +37,7 @@ source_url = mlrun.get_sample_path("data/iris_data.csv")
 prep_data_run = data_prep_func.run(name='prep_data',
                                    handler=prep_data,
                                    inputs={'source_url': source_url},
-                                   local=True)
+                                   local=False)
 
 print(prep_data_run.state())
 dataset = prep_data_run.artifact('cleaned_data').as_df()
