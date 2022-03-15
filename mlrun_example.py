@@ -5,11 +5,11 @@ import mlrun
 project_name_base = 'mlrun_demo'
 
 # Initialize the MLRun project object
-project = mlrun.get_or_create_project(project_name_base, context="./", user_project=True)
+#project = mlrun.get_or_create_project(project_name_base, context="./", user_project=True)
 
 # Display the current project name
-project_name = project.metadata.name
-print(f'Full project name: {project_name}')
+#project_name = project.metadata.name
+#print(f'Full project name: {project_name}')
 
 # mlrun: start-code
 
