@@ -28,7 +28,7 @@ def prep_data(context, source_url: mlrun.DataItem, label_column='label'):
 # mlrun: end-code
 
 # Convert the local prep_data function to an MLRun project function
-data_prep_func = mlrun.code_to_function(name='prep_data', kind='job', image='mlrun/mlrun')
+data_prep_func = mlrun.code_to_function(name='prep_data', kind='job',filename="mlrun_example.py", image='mlrun/mlrun')
 
 # Set the source-data URL
 source_url = mlrun.get_sample_path("data/iris_data.csv")
@@ -37,7 +37,6 @@ source_url = mlrun.get_sample_path("data/iris_data.csv")
 prep_data_run = data_prep_func.run(name='prep_data',
                                    handler=prep_data,
                                    inputs={'source_url': source_url},
-                                   filename="mlrun_example.py",
                                    local=True)
 
 print(prep_data_run.state())
