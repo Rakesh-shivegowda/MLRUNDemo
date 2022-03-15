@@ -31,7 +31,7 @@ def prep_data(context, source_url: mlrun.DataItem, label_column='label'):
 data_prep_func = mlrun.code_to_function(name='prep_data', kind='job', image='mlrun/mlrun')
 
 # Set the source-data URL
-source_url = mlrun.get_sample_path("data/iris/iris.data.raw.csv")
+source_url = mlrun.get_sample_path("data/iris_data.csv")
 
 # Run the `data_prep_func` MLRun function locally
 prep_data_run = data_prep_func.run(name='prep_data',
