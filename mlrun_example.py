@@ -37,6 +37,7 @@ source_url = mlrun.get_sample_path("data/iris_data.csv")
 prep_data_run = data_prep_func.run(name='prep_data',
                                    handler=prep_data,
                                    inputs={'source_url': source_url},
+                                   artifact_path=path.join(mlrun.mlconf.artifact_path, '{{run.uid}}'),
                                    local=False)
 
 print(prep_data_run.state())
