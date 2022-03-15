@@ -12,7 +12,8 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
-          python model.py
+          python mlrun_example.py
+          #python model.py
           
           echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
